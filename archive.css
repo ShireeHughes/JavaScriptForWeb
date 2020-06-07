@@ -1,0 +1,46 @@
+.archive-outer {width:100%;}
+
+.archive-outer li.archivePosts {
+	display: inline-grid; 
+	list-style-type:none;
+	width:200px; 
+	height:200px; 
+	margin:.5em;-webkit-transition: all 0.5s ease-out;
+	-moz-transition: all 0.5s ease;
+	-o-transition: all 0.5s ease;
+}
+
+.archive-outer li.archivePosts:before {content:&#39;&#39;!important;}
+
+.archive-outer li img {
+	box-shadow: 8px 8px 10px #aaa;
+	margin:0px;
+}
+
+.archive-outer li.archivePosts .item-title {
+	overflow-wrap: break-word;
+	width: 200px;
+	position:absolute;
+	z-index:100;
+	margin-top: 75px;
+	margin-right:auto;
+	margin-left:auto;
+	margin-bottom:auto;
+	background:rgba(255,255,255,.75);
+	color:#000;
+	text-align:center;
+	overflow: hidden;
+	height: 60px;
+} 
+
+.archive-outer li.archivePosts a {
+	color:#000!important;
+	font-family:Spicy Rice;
+	font-size: 20px;
+}
+
+.archive-outer li.archivePosts:hover {
+	-webkit-transform: rotate(-7deg);
+	-moz-transform: rotate(-7deg);
+	-o-transform: rotate(-7deg);
+}
