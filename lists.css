@@ -1,0 +1,209 @@
+/* Circle List*/
+ol.circle-list, ol.rectangle-list {
+    display: block;
+    padding: 0 0 0 26px;
+    list-style: none;
+    overflow: hidden;
+    counter-reset: numList;
+}
+ol.circle-list li, ol.rectangle-list li {
+    margin-right: 44px;
+    position: relative;
+    padding: 2px;
+	margin-bottom:2px;
+   -webkit-transition: all .5s ease-out;
+    -moz-transition: all .5s ease-out;
+    -ms-transition: all .5s ease-out;
+    -o-transition: all .5s ease-out;
+transition: all .5s ease-out;
+}
+
+ol.circle-list li a, ol.rectangle-list li a {
+-webkit-transition: all .5s ease-out;
+    -moz-transition: all .5s ease-out;
+    -ms-transition: all .5s ease-out;
+    -o-transition: all .5s ease-out;
+transition: all .5s ease-out;
+}
+.rounded-list-alt li {
+    overflow:hidden;
+    text-indent:1em;
+    position: relative;
+    display: block;
+    padding: .2em .2em .2em 2em;
+    margin: 0.5em 1em;
+    color: #444;
+    text-decoration: none;
+    border-radius: .3em;
+    transition: all .3s ease-out;
+}
+ol.rounded-list-alt {
+    counter-reset: li;
+    list-style: none;
+    padding: 0;
+    text-shadow: 0 1px 0 rgba(255,255,255,.5);
+}
+
+.rounded-list li{
+    position: relative;
+    display: block;
+    padding: .4em .4em .4em 2em!important;
+    *padding: .4em!important;
+    margin: .5em 0!important;
+    background: #ddd;
+    color: #444;
+    text-decoration: none;
+    border-radius: .3em;
+    transition: all .3s ease-out;   
+}
+
+.rounded-list li:hover, .rounded-list-alt li:hover{
+    background: #eee;
+}
+
+.rounded-list li:hover:before, .rounded-list-alt li:hover:before{
+    transform: rotate(360deg);  
+}
+
+.rounded-list-alt li:before {
+    content: counter(li);
+    counter-increment: li;
+    position: absolute; 
+    left: 0em;
+text-indent:0em!important;
+    top: 50%;
+    font-family:Snowburst One;
+    margin-top: -1.3em;
+    background: #44177c;
+    color: #00aaa0;
+    height: 2em;
+    width: 2em;
+    line-height: 2em;
+    border: .3em solid #fff;
+    text-align: center;
+    font-weight: bold;
+    border-radius: 2em;
+    transition: all .3s ease-out;
+}
+
+  .rounded-list li a {color:#8a00e6;}
+.rounded-list li:before {
+    content: counter(li);
+    counter-increment: li;
+    position: absolute; 
+    left: -1.3em;
+    top: 50%;
+    font-family:Snowburst One;
+    margin-top: -1.3em;
+    background: #8a00e6;
+    color: #00aacc;
+    height: 2em;
+    width: 2em;
+    line-height: 2em;
+    border: .3em solid #fff;
+    text-align: center;
+    font-weight: bold;
+    border-radius: 2em;
+    transition: all .3s ease-out;
+}
+ol.rounded-list {
+    counter-reset: li; /* Initiate a counter */
+    list-style: none; /* Remove default numbering */
+    *list-style: decimal; /* Keep using default numbering for IE6/7 */
+    padding: 0;
+    margin-bottom: 4em;
+   // text-shadow: 0 1px 0 rgba(255,255,255,.5);
+}
+
+ol.rounded-list ol {
+    margin: 0 0 0 2em; /* Add some left margin for inner lists */
+}
+ol.rounded-list-alt ol {
+    margin: 0 0 0 2em; /* Add some left margin for inner lists */
+}
+  ol.circle-list { padding: 0 30px!important; }
+  ol.circle-list li {list-style-type:none;}
+ol.circle-list li:hover, ol.rectangle-list li:hover  {
+    background: #ddd;
+    border-radius:3px;
+}
+
+ol.circle-list li a:hover, ol.rectangle-list li a:hover {
+    color: #8a00e6!important;
+}
+
+ol.circle-list li:before {
+    counter-increment: numList;
+    content: counter(numList);
+    
+    float: left;
+    position: absolute;
+    left: -26px;
+    
+    font: bold 12px Snowburst One,sans-serif;
+    text-align: center;
+    color: #fff;
+    line-height: 18px;
+    
+    width: 18px; height: 18px;
+    background: #77009d;
+    
+    -moz-border-radius: 999px;
+    border-radius: 999px
+}
+
+.rectangle-list li:hover:after{
+       left: 2.1em;
+    border-left-color: #8a00e6;           
+} 
+ol.rectangle-list {
+    counter-reset: li;
+    *list-style: decimal; /* Keep using default numbering for IE6/7 */
+      }
+ol.rectangle-list {
+    -webkit-padding-start: 0px;
+      }
+ol.rectangle-list li {
+position: relative;
+    display: block;
+    padding: .4em .4em .4em .8em!important;
+    margin: .5em 0 .5em 0em;
+    overflow: hidden;
+    padding-left: 2.5em!important;
+    background: #ddd;
+    color: #444;
+    text-decoration: none;
+    transition: all .3s ease-out;
+}
+.rectangle-list li:before{
+    content: counter(li);
+    counter-increment: li;
+    position: absolute;
+    left: 0em;
+    background: #58c6d5;
+    height: 2em;
+    top: 0em;
+    width: 2em;
+    line-height: 2em;
+    text-align: center;
+    font-weight: bold;
+    color: #44177c;
+    text-shadow: none!important;
+    font-family: Snowburst One;
+}
+
+.rectangle-list li:after{
+    position: absolute;
+    content: &#39;&#39;;
+    border: .5em solid transparent;
+    top: .5em;
+/*transition: all .3s ease-out;             */
+}
+
+.rectangle-list li:hover:after{
+//   left: .5em;
+    border-left-color: #8a00e6;           
+}   
+.rectangle-list li:hover:before{
+    border: 1px solid #8a00e6;           
+}   
