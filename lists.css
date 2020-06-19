@@ -156,6 +156,10 @@ ol.circle-list li:before {
        left: 2.1em;
     border-left-color: #8a00e6;           
 } 
+ol.rectangle-list li:hover {
+background: #eee;
+}
+
 ol.rectangle-list {
     counter-reset: li;
     *list-style: decimal; /* Keep using default numbering for IE6/7 */
@@ -164,7 +168,7 @@ ol.rectangle-list {
     -webkit-padding-start: 0px;
       }
 ol.rectangle-list li {
-position: relative;
+    position: relative;
     display: block;
     padding: .4em .4em .4em .8em!important;
     margin: .5em 0 .5em 0em;
@@ -194,14 +198,12 @@ position: relative;
 
 .rectangle-list li:after{
     position: absolute;
-    content: &#39;&#39;;
+    content: '';
     border: .5em solid transparent;
     top: .5em;
-/*transition: all .3s ease-out;             */
 }
 
 .rectangle-list li:hover:after{
-//   left: .5em;
     border-left-color: #8a00e6;           
 }   
 .rectangle-list li:hover:before{
