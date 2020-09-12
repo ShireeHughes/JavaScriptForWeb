@@ -1,0 +1,16 @@
+.podcast-transcription-media .time-clock {
+    font-size: x-small;
+    color: #8a00e6;
+}
+
+.podcast-transcription-media .speaker {
+    font-family: Snowburst One;
+    text-transform: uppercase;
+    padding: 0px;
+    margin: 0px;
+}
+
+.podcast-transcription-media div {
+    padding-bottom: 10px;
+}
+

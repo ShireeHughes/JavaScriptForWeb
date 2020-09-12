@@ -56,14 +56,18 @@ console.log(PostEntries);
 
 function DisplaytheTOC(PostArray)
 {
-document.write('<div class="archive-outer"><ul>');
+if(!monthArchive) {
+  document.write('<div class="archive-outer"><ul>');
+}
 
     var MonthNames=["January","February","March","April","May","June","July","August","September","October","November","December"];
     var NumberOfEntries=PostArray.length;
+    var currentMonth = "";
+    var currentYear = -1;
+var flag = false;
     
     for(var EntryNum = NumberOfEntries-1; EntryNum >= 0; EntryNum--)
     {
-       
         NameOfMonth = MonthNames[parseInt(PostArray[EntryNum].month,10)-1]
         UpdateNameOfMonth = MonthNames[parseInt(PostArray[EntryNum].update_month,10)-1]
              
@@ -71,11 +75,32 @@ document.write('<div class="archive-outer"><ul>');
         var endNdx = writeSum.indexOf("<!--");
        if(endNdx != -1) { writeSum = writeSum.substring(0, endNdx);}
       else {writeSum = writeSum.substring(0,200);}
-      if(PostArray[EntryNum].url != document.URL) {     
+
+     if(monthArchive) {
+       if(currentYear != PostArray[EntryNum].year && document.getElementById(PostArray[EntryNum].year)==undefined) {
+         if(flag) { document.write('</ul></div>');  flag = false;}
+         document.write('<h2 class="' + PostArray[EntryNum].year+ '" id="' + PostArray[EntryNum].year + '">' + PostArray[EntryNum].year + '</h2>');
+         currentYear = PostArray[EntryNum].year;
+         currentMonth = "";
+       }
+       if(currentMonth != NameOfMonth) {
+         if(flag) { document.write('</ul></div>'); }
+         if(document.getElementById(NameOfMonth+PostArray[EntryNum].year)==undefined){ document.write('<h3 class="' + PostArray[EntryNum].year + '" id="' + NameOfMonth + PostArray[EntryNum].year + '">' + NameOfMonth +' ' + PostArray[EntryNum].year + '</h3>'); }
+         currentMonth = NameOfMonth;
+         document.write('<div class="archive-outer"><ul>');
+         flag = true;
+       }
+       document.write('<li class="archivePosts"><div class="item-thumbnail"><a href="' + PostArray[EntryNum].url + '"><img src="' + PostArray[EntryNum].thumb + '" /></a></div><div class="item-title"><a href="' + PostArray[EntryNum].url + '">'+ PostArray[EntryNum].title + '</a></div></li>');
+     } else{
+       if(PostArray[EntryNum].url != document.URL) {     
 document.write('<li class="archivePosts"><div class="item-thumbnail"><a href="' + PostArray[EntryNum].url + '"><img src="' + PostArray[EntryNum].thumb + '" /></a></div><div class="item-title"><a href="' + PostArray[EntryNum].url + '">'+ PostArray[EntryNum].title + '</a></div></li>');
-      }
+       }
+     }
     }
-document.write('</ul></div">');
+    document.write('</ul></div">');
+//if(!monthArchive) {
+    document.write('</div>');
+//}
 
 }
 
